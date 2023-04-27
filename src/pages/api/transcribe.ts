@@ -37,12 +37,11 @@ export default async function handler(
 
   // if valid audio format not available then return error message
   if (!format) {
-    res.status(200).json({
+    return res.status(200).json({
       isError: true,
       errorMessage: "No audio format available for provided youtube url.",
       text: "",
     });
-    return 0;
   }
 
   // set youtube audio stream
@@ -90,16 +89,19 @@ export default async function handler(
     // remove existing file.
     try {
       fs.unlinkSync(outPath);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
 
-    res.status(200).json({
+    return res.status(200).json({
       isError: false,
       errorMessage: "",
       text: transcribedText,
     });
-    return 0;
   } catch (error: any) {
-    res.status(200).json({
+    console.log(error);
+
+    return res.status(200).json({
       isError: true,
       errorMessage: error.message,
       text: "",

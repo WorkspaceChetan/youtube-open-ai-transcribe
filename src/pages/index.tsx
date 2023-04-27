@@ -114,7 +114,13 @@ export default function Home() {
             rows={18}
             defaultValue=""
             inputRef={textAreaRef}
-            sx={{ width: "100%" }}
+            sx={{
+              mb: 3,
+              width: "100%",
+              "& .Mui-disabled": {
+                "-webkit-text-fill-color": "rgba(0, 0, 0, 0.87)",
+              },
+            }}
             disabled={true}
           />
         </Box>
