@@ -1,5 +1,7 @@
-### Demo NextJS OPENAI
+### Demo NextJs- Youtube video transcribe using OpenAI
 ---
+
+[Live Demo](https://transcribe-youtube-openai.netlify.app/)
 
 This app will accept two parameters 
 
